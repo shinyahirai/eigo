@@ -7,5 +7,6 @@ class CreateChats < ActiveRecord::Migration
 
       t.timestamps
     end
+
   end
 end

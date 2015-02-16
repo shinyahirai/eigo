@@ -24,8 +24,12 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Link</a></li>
-        <li><a href="#">Link</a></li>
+        <% if current_user.user_type %>
+          <li><%= link_to "Students", users_path %></li>
+        <% else %>
+          <li><%= link_to "Teachers", users_path %></li>
+        <% end %>
+        <li><%= link_to "Chat Room", chat_rooms_path %></li>
       </ul>
       <form class="navbar-form navbar-left" role="search">
         <div class="form-group">
