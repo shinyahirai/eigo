@@ -3,19 +3,31 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.7'
-
+# ユーザー認証
 gem 'devise'
 
 group :development do
   gem 'puma'
   gem 'sqlite3'
   gem 'rails-erd', github: 'paulwittmann/rails-erd', branch: 'mavericks'
+  gem 'pry-rails'
+  gem 'pry-doc'
+  gem 'pry-byebug'
+  gem 'hirb'
+  gem 'hirb-unicode'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'spring'
 end
 
 group :production do
   gem 'pg'
   gem 'rails_12factor'
 end
+
+# Bootstrap
+gem 'bootstrap-sass', '~> 3.2.0'
+gem 'font-awesome-sass'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
