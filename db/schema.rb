@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150213175225) do
+ActiveRecord::Schema.define(version: 20150216054541) do
+
+  create_table "chat_rooms", force: true do |t|
+    t.string   "title"
+    t.integer  "student_id"
+    t.integer  "teacher_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "chat_rooms", ["student_id", "teacher_id"], name: "index_chat_rooms_on_student_id_and_teacher_id"
+  add_index "chat_rooms", ["student_id"], name: "index_chat_rooms_on_student_id"
+  add_index "chat_rooms", ["teacher_id"], name: "index_chat_rooms_on_teacher_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -35,7 +47,7 @@ ActiveRecord::Schema.define(version: 20150213175225) do
     t.integer  "age"
     t.integer  "sex"
     t.string   "nationality"
-    t.boolean  "type"
+    t.boolean  "user_type"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
